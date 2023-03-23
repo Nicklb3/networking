@@ -1,14 +1,14 @@
 const { User, Thought } = require('../models');
 
 module.exports = {
-    
+    // get thoughts
     getThoughts(req, res) {
         Thought.find({})
             .then((users) =>  res.json(users))
             .catch((err) => res.status(500).json(err))    
     },
 
-   
+//    get a single thought
     getSingleThought(req, res) {
         Thought.findOne({ _id: req.params.thoughtId }) 
             .select('-__v')
@@ -23,7 +23,7 @@ module.exports = {
             });
     },
 
-  
+//   create a thought
     createThought(req, res) {
         Thought.create(req.body)
         .then(({ _id }) => {
@@ -44,7 +44,7 @@ module.exports = {
         })
     },
 
-    
+    // update thought
     updateThought(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
@@ -62,7 +62,7 @@ module.exports = {
             });
     },
 
-    
+    // delete a thought
     deleteThought(req, res) {
         Thought.findOneAndDelete({ _id: req.params.thoughtId })
         .then((thought) => 
@@ -85,7 +85,7 @@ module.exports = {
             });
     },
 
-    
+    // add a reaction to a thought
     addReaction (req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
@@ -103,7 +103,7 @@ module.exports = {
             });
     },
 
-   
+//    delete a reaction from a thought
     deleteReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
