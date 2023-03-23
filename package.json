@@ -1,0 +1,25 @@
+{
+  "name": "networking",
+  "version": "1.0.0",
+  "description": "A social network media platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicklb3/networking.git"
+  },
+  "author": "Nick Bonner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicklb3/networking/issues"
+  },
+  "homepage": "https://github.com/Nicklb3/networking#readme",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mongoose": "^6.9.2"
+  }
+}
